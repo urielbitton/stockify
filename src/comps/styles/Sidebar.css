@@ -1,0 +1,172 @@
+.sidebar {
+  height: 100%;
+  width: 100%;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px 0;
+} 
+.sidebarbg {
+  background-image: url('https://i.imgur.com/jQYaHdU.jpg');
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.09;
+}
+.mainlogo img {
+  margin-right: 10px;
+}
+.profcont {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.profcont h5 {
+  color: #fff;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 500;
+}
+.profcont img {
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+}
+.sidebar .menu {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.sidebartop {
+  width: 100%;
+}
+.sidebar .menu a {
+  color: #fff;
+  width: 100%;
+  padding: 10px 40px;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+  font-size: 14px;
+}
+.sidebar .menu a:hover, .sidebar .activemenulink {
+  background: rgba(255,255,255,0.15);
+}
+.sidebar .menu a i {
+  width: 20px;
+}
+.sidebarbottom button {
+  min-width: 120px;
+}
+.myaccountcont {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 100%;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-left: none;
+  border-right: none;
+}
+.myaccountcont h6 {
+  color: #eee;
+  font-weight: 500;
+  font-size: 12px;
+  transition: all 0.2s;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.myaccountcont h6 i {
+  transition: all 0.2s;
+}
+.myaccountcont h6:hover {
+  background: rgba(255,255,255,0.1);
+}
+.myaccountdiv {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.myaccountdiv a {
+  display: block;
+  padding: 10px 43px;
+  font-size: 12px;
+  color: #ddd;
+  transition: all 0.2s;
+  cursor: pointer;
+  width: 100%;
+}
+.myaccountdiv a:hover {
+  background: rgba(255,255,255,0.1);
+}
+.myaccountdiv a i {
+  width: 15px;
+}
+.sidebar button {
+  background: #fff;
+  padding: 12px;
+  color: var(--color);
+}
+
+.sidebarfolded .mainlogo span, .sidebarfolded .myaccountcont h6 i.fa-user-alt,
+.sidebar .myaccountcont h6 i.fa-user-alt, .sidebarfolded .profcont h5,
+.sidebarfolded .myaccountcont h6 span, .sidebarfolded .myaccountcont h6 i.fa-angle-right,
+.sidebarfolded .myaccountdiv span, .sidebarfolded .menu a span, .sidebarfolded button span  {
+  display: none;
+}
+.sidebarfolded i {
+  font-size: 16px;
+}
+.sidebarfolded .myaccountcont h6 i.fa-user-alt, .sidebarfolded .myaccountcont h6 i {
+  display: block;
+}
+.sidebarfolded .mainlogo img, .sidebarfolded .myaccountdiv i, .sidebarfolded button i {
+  margin: 0;
+}
+.sidebarfolded .profcont img {
+  width: 50px;
+} 
+.sidebarfolded .myaccountcont h6 {
+  flex-direction: column;
+}
+.sidebarfolded .myaccountdiv a {
+  padding: 10px;
+  text-align: center;
+}
+.sidebarfolded .menu a {
+  padding: 20px;
+  text-align: center;
+  margin: auto;
+}
+.sidebarfolded .menu a i {
+  margin: auto;
+}
+.sidebarfolded button {
+  min-width: 50px;
+  width: 50px;
+}
+.sidebarpullupbtn {
+  display: none;
+} 

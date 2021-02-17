@@ -1,0 +1,108 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: 'Nunito';
+}    
+  
+:root { 
+  --color: #601cff;   
+  --bg: #601cff; 
+  --dark1: #232a3a;
+  --dark2: #141c2b;
+  --white1: #fff;
+  --white2: #fff; 
+  --aqua: rgba(62, 202, 193);
+  --green: rgba(213, 216, 65);
+  --yellow: rgba(243, 197, 30);
+  --red: rgba(255, 50, 53);
+  --shadow: 0 0 8px rgba(0,0,0,0.12);
+  --colorshadow: #7c3bffaa;
+}   
+
+.spacer {
+  height: 50px;
+}
+.spacers {
+  height: 30px;
+}
+.spacerl {
+  height: 100px;
+} 
+* {
+  position: relative;
+  margin: 0;
+  box-sizing: border-box;
+  letter-spacing: 0.2px;
+  outline: none;
+}
+::selection {
+  background: var(--color);
+  color: white;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+} 
+.hidescroll::-webkit-scrollbar {
+  display: none;
+} 
+::-webkit-scrollbar-track {
+  background: #eee; 
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color);
+  border-radius: 50px;
+}
+img {
+  object-fit: cover;
+  max-width: 100%;
+}
+button {
+  outline: none;
+  cursor: pointer;
+  border: 1px solid var(--color);
+  transition: all 0.2s;
+  padding: 9px 15px;
+  background: var(--color);
+  color: #fff;
+  border-radius: 6px;
+  box-shadow: 0px 10px 20px -2px rgba(53,182,250,0.05);
+} 
+button:active {
+  transform: scale(0.97);
+}
+button:hover {
+  filter: brightness(110%);
+} 
+button i, a i {
+  margin-right: 10px;
+}
+a { 
+  text-decoration: none;
+  color: #111;
+}
+input, textarea, select {
+  outline: none;
+  transition: all 0.2s;
+  font-family: inherit;
+  background: var(--white2);
+} 
+input[disabled] {
+  background: #f5f5f5;
+}
+.darkcont input[disabled] {
+  background: var(--white2);
+}
+.darkcont input, .darkcont textarea, .darkcont select {
+  color: #aaa;
+} 
+textarea::placeholder {
+  color: #bbb;
+}
+hr {
+  border: none;
+}
+
+

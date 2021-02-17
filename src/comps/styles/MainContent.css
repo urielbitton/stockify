@@ -1,0 +1,15 @@
+.maincontent {
+  width: 100%;
+  height: 100vh;
+  background: var(--white2);
+  border-radius: 40px 0 0 40px; 
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.maincontentinner {
+  padding: 30px;
+  width: 100%;
+  height: 100%;
+  background: var(--white2);
+  transition: background 0.2s;
+}

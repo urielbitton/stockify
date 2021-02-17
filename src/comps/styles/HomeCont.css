@@ -1,0 +1,108 @@
+.homecont {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--bg);
+  display: grid;
+  grid-template-columns: 220px auto;
+} 
+.homecontfolded {
+  grid-template-columns: 75px auto;
+}
+
+@media (max-width:1080px) {
+  nav .appinput {
+    display: none;
+  }
+  nav  {
+    width: 100%;
+    border-radius: 0;
+  }
+  nav .dynamiccont i.fa-stream, nav .dynamiccont button {
+    display: none;
+  }
+  .homecont {
+    grid-template-columns: auto;
+  }
+  .maincontent {
+    border-radius: 0;
+  }
+  .sidebar {
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    z-index: 1005;
+    transition: all 0.4s;
+  }
+  .sidebar.mobsidebar {
+    top: 0;
+  }
+  .hidesidebar {
+    top: -100vh;
+  }
+  .sidebar .myaccountcont {
+    text-align: center;
+  }
+  .sidebar .myaccountcont h6 {
+    justify-content: center;
+    font-size: 15px;
+  }
+  .sidebar .myaccountcont h6 span {
+    margin-right: 10px;
+  }
+  .sidebar .myaccountdiv a {
+    font-size: 14px;
+  }
+  .sidebar .menu {
+    text-align: center;
+  }
+  .sidebar .menu a {
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+  }
+  .sidebarbottom button {
+    padding: 15px 35px;
+    min-width: auto;
+    text-transform: uppercase;
+  }
+  .sidebarpullupbtn {
+    position: absolute;
+    display: block;
+    top: 20px;
+    left: 20px;
+    color: #ddd;
+    font-size: 20px;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    z-index: 100;
+  }
+  .sidebarpullupbtn:hover {
+    color: #fff;
+  }
+  .navdropdownbtn {
+    display: block;
+    font-size: 20px;
+    color: #aaa;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.2s;
+  }
+  .navdropdownbtn:hover {
+    color: var(--color);
+  }
+}
+
+@media (max-width: 600px) {
+  nav h4 {
+    display: none;
+  }
+  .maincontentinner {
+    padding: 30px 10px;
+  }
+  .profilgrid {
+    width: 100%;
+  }
+}

@@ -1,0 +1,47 @@
+.dashbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  background: var(--white1);
+  box-shadow: var(--shadow);
+  height: 150px;
+}
+.dashsmall {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.dashicon {
+  width: 70px;
+  height: 70px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dashicon i {
+  font-size: 27px;
+  color: #fff;
+}
+.dashsmallinfo {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: right;
+}
+.dashsmallinfo h2 {
+  color: #555;
+  font-size: 23px;
+}
+.dashsmallinfo h4 {
+  font-size: 15px;
+  color: #777;
+}
+.dashsmallinfo small {
+  color: #aaa;
+}
+
+
