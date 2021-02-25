@@ -37,7 +37,7 @@ export default function Sidebar(props) {
         </div>
       </div>
       <div className="sidebarbottom">
-        <button onClick={props.handleLogout}><i className="fal fa-sign-out"></i><span>Logout</span></button>
+        <button><i className="fal fa-chart-line"></i><span>Add Stock</span></button>
       </div>
     </div>
   )

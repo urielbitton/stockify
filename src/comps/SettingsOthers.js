@@ -6,7 +6,7 @@ import {StoreContext} from './StoreContext'
 export default function ParamAutres() { 
 
   const {darkmode, setDarkmode, setStatusBar, themecolor, setThemeColor} = useContext(StoreContext)  
- 
+  
   useEffect(() => {
     document.documentElement.style.setProperty('--color',themecolor)
     document.documentElement.style.setProperty('--colorshadow',themecolor+'aa')
@@ -28,7 +28,7 @@ export default function ParamAutres() {
       <div className="profilgrid">
         <h4>Theme Settings</h4> 
         <AppSwitch title="Mode Nuit" iconclass="far fa-moon-stars" checked={darkmode} onChange={(e) => setDarkmode(e.target.checked)}/>
-        <AppSelect title="Couleur Theme" options={[{name:'Default',value:'#2e66f5'},{name:'Or',value:'#fca816'},{name:'Khaki Vert',value:'#93b160'},{name:'Mauve Royale',value:'#9012ff'}]} value={themecolor} onChange={(e) => setThemeColor(e.target.value)}/>
+        <AppSelect title="Couleur Theme" options={[{name:'Default',value:'#601cff'},{name:'GOld',value:'#fca816'},{name:'Keaf Green',value:'#93b160'},{name:'Royal Purple',value:'#9012ff'}]} value={themecolor} onChange={(e) => setThemeColor(e.target.value)}/>
         <h4>Notifications</h4> 
         <AppSwitch title="Montrer Notifications" iconclass="far fa-bell"/>
         <AppSwitch title="Notifications Push" iconclass="far fa-bell-exclamation"/>
