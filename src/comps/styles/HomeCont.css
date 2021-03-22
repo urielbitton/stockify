@@ -9,6 +9,9 @@
 .homecontfolded {
   grid-template-columns: 75px auto;
 }
+.apppage {
+  padding-bottom: 40px;
+}
 
 @media (max-width:1080px) {
   nav .appinput {

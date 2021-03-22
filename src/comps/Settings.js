@@ -16,7 +16,7 @@ export default function Account() {
           </div>
         </div>
         <div className="profiltitles">
-          <h4>Uriel Bitton</h4>
+          <h4>Bjorn Ironside</h4>
           <h6>App Developer</h6>
         </div>
         <div className="menu">

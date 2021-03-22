@@ -14,3 +14,5 @@ export default function App() {
     </div>
   );
 }
+
+//checkout finnhub.io for alternate stocks API

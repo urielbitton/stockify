@@ -147,6 +147,7 @@
 }
 .sidebarfolded .profcont img {
   width: 50px;
+  height: 50px;
 } 
 .sidebarfolded .myaccountcont h6 {
   flex-direction: column;

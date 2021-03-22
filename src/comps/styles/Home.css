@@ -1,3 +1,380 @@
-.darkcont .accueilpage h3 {
+.homegrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 30px;
+  width: 100%;
+  grid-auto-flow: row dense;
+  margin-top: 30px;
+  align-items: start; 
+}
+.apptitles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.apptitles h4 {
+  font-size: 18px;
+  color: var(--graytxt)
+}
+.apptitles h5 {
+  margin-top: 5px;
+  color: var(--graytxt);
+  opacity: 0.6;
+  font-weight: 500;
+}
+.banner {
+  width: 100%;
+  padding: 30px;
+  background: var(--dark1);
+  border-radius: 10px;
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+  grid-column: span 3;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.stocksrow {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  grid-gap: 30px;
+}
+.banner img {
+  top: -60px;
+  width: 220px;
+  height: 260px;
+  object-fit: contain;
+}
+.banner h4 {
+  color: #fff;
+  font-size: 20px;
+}
+.banner h6 {
+  color: #aaa;
+  font-weight: 500;
+  margin-top: 10px;
+  font-size: 13px;
+}
+.quicknotifs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 50px;
+  grid-gap: 10px;
+}
+.quicknotifs small {
+  border-radius: 40px;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 8px 15px;
+  font-size: 12px;
+  color: #ddd;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.quicknotifs small:hover {
+  background: rgba(255,255,255,0.1); 
+}
+.quicknotifs small i {
+  margin-right: 10px;
+}
+.homemain {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 15px;
+  width: 100%;
+  grid-column: span 3;
+}
+.homeside {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  grid-gap: 15px;
+}
+.dashbox {
+  box-shadow: var(--shadow);
+  border-radius: 10px;
+  padding: 20px;
+  background: #fff;
+  width: 100%;
+}
+.dashbox .view a i {
+  margin: 0;
+  color: var(--color);
+}
+.calendar {
+  grid-column: span 1;
+  background: #fff;
+  border-radius: 10px;
+  width: 100%;
+  height: 305px;
+  overflow: hidden;
+  padding: 0;
+}
+.fc-col-header {
+  margin: 0;
+}
+#calendar .fc-toolbar-title {
+  font-size: 16px;
+}
+#calendar .fc-today-button {
+  background: none;
+  color: var(--txt);
+  border: none;
+}
+#calendar .fc-button-group button {
+  background: #eee;
+  border: none;
+  padding: 5px;
+  margin-left: 5px;
+  color: #bbb;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#calendar .fc-toolbar-chunk {
+  top: 10px;
+}
+#calendar .fc-toolbar-chunk button {
+  background: var(--light);
+}
+#calendar .fc-today-button {
+  font-size: 13px;
+  color: var(--color);
+}
+#calendar .fc-toolbar-chunk span {
+  color: var(--color)
+}
+#calendar .fc-button-group button:hover {
+  background: var(--light2);
+}
+#calendar table, #calendar td, #calendar th {
+  border: none;
+}
+#calendar table {
+  width: 100%;
+}
+#calendar td {
+  font-size: 11px;
+  padding: 0;
+  transition: all 0.2s;
+}
+#calendar .fc-daygrid-day-frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#calendar .fc-daygrid-day-frame:hover {
+  background: #f1f1f1;
+  cursor: pointer;
+}
+#calendar th {
+  padding-bottom: 10px;
+}
+#calendar ::-webkit-scrollbar {
+  display: none;
+} 
+#calendar .fc-header-toolbar {
+  width: 91%;
+  margin: auto;
+  margin-bottom: 30px;
+} 
+
+.statusbox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #777;
+  grid-gap: 20px;
+}
+.statusbox h4 {
+  font-size: 13px;
+}
+.statusbox h4 span {
+  display: block;
+  margin-top: 5px;
+  font-size: 20px;
+  color: var(--color);
+  font-weight: 600;
+}
+.statusbox .iconcont {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  grid-gap: 20px;
+  width: 100%;
+}
+.statusbox .iconcont i {
+  font-size: 27px;
+}
+.homeside .view {
+  width: 30px;
+  height: 30px;
+  background: var(--light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  color: var(--color);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.homeside .view:hover {
+  background: var(--light2);
+}
+.updatesbox {
+  height: 340px;
+  padding: 20px;
+}
+.dashbox h5 {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 30px;
+} 
+.hometasksbox > small {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 11px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.hometasksbox > small:hover {
+  color: var(--color)
+}
+.hometasksbox > small i {
+  top: 1px;
+  left: 3px;
+  transition: all 0.2s;
+}
+.hometasksbox > small:hover i {
+  left: 6px;
+}
+.dashgraph {
+  grid-column: span 3;
+  grid-row: span 3;
+  height: 405px;
+} 
+.hometasksbox {
+  grid-column: span 3;
+  height: 340px;
+} 
+.hometaskrow, .hometaskhead {
+  width: 100%;
+  height: 50px;
+  background: var(--light);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+.hometaskrow {
+  height: 60px;
+  margin-bottom: 10px;
+}
+.hometaskrow .view {
+  width: 35px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  flex-basis: 3%;
+}
+.hometaskrow .view:hover {
+  background: var(--light2)
+}
+.hometaskhead {
+  background: none;
+  height: 10px;
+}
+.hometaskhead h6 {
+  font-size: 13px;
+  color: #333;
+  flex-basis: 20%;
+}
+.hometaskhead h6:last-child {
+  flex-basis: 3%;
+}
+.hometaskrow h6 {
+  color: #777;
+  font-size: 12px;
+  flex-basis: 20%;
+}
+.hometaskrow h6:first-child, .hometaskhead h6:first-child {
+  flex-basis: 25%;
+}
+.hometaskrow h6 i {
+  font-size: 17px;
+  padding: 5px;
+  cursor: pointer;
+}
+.hometaskrow h6 i:hover {
+  color: var(--color);
+}
+.updateitem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+.updateitem h4 {
+  font-size: 12px;
+  color: #555;
+  top: -2px;
+}
+.updateitem h4 i {
+  top: 2px;
+  margin-right: 10px;
+  color: var(--color);
+  padding: 3px 0;
+  z-index: 10;
+  background: #fff;
+  font-size: 16px;
+  border-radius: 100%
+}
+.updatebar {
+  position: absolute;
+  left: 27px;
+  top: 85px;
+  height: 200px;
+  width: 2px;
+  background: var(--color);
+  z-index: 5;
+  opacity: 0.2;
+}
+.sidetogglecont {
+  position: absolute;
+  width: 25px;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+.sidetogglecont:hover hr {
+  background: #fff;
+}
+.sidetogglecont hr {
+  width: 100%;
+  height: 2px;
+  background: #aaa;
+  margin: 5px 0;
+  transition: all 0.2s;
+}
+.sidetogglecont hr:nth-of-type(2) {
+  width: 55%;
+}
+.sidetogglecont hr:nth-of-type(3) {
+  width: 30%;
+}
+.darkcont .homepage h3 {
   color: #bbb;
 } 

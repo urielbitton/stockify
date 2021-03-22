@@ -10,9 +10,9 @@ const StoreContextProvider = (props) => {
   const [themecolor, setThemeColor] = useState('#601cff')
   const [showSidebar, setShowSidebar] = useState(false)
   const [collection, setCollection] = useState([])
-  let stocksList = ['tesla','google','facebook']
+  let stocksList = ['tesla','google','facebook','amazon','apple']
  
-
+ 
   useEffect(() => {
     stocksList && stocksList.forEach(el => {
       let options = {

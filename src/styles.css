@@ -7,15 +7,12 @@ html, body {
   
 :root { 
   --color: #601cff;   
+  --graytxt: #696e93;
   --bg: #601cff; 
   --dark1: #232a3a;
   --dark2: #141c2b;
   --white1: #fff;
   --white2: #fff; 
-  --aqua: rgba(62, 202, 193);
-  --green: rgba(213, 216, 65);
-  --yellow: rgba(243, 197, 30);
-  --red: rgba(255, 50, 53);
   --shadow: 0 0 8px rgba(0,0,0,0.12);
   --colorshadow: #7c3bffaa;
 }   
