@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { AppSelect, AppSwitch } from './AppInputs'
-import './styles/ProfilContent.css'
-import {StoreContext} from './StoreContext'
+import { AppSelect, AppSwitch } from '../utils/AppInputs'
+import '../styles/Profile.css'
+import {StoreContext} from '../StoreContext'
 
 export default function ParamAutres() { 
 

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import MainContent from './MainContent'
-import Sidebar from './Sidebar'
+import Sidebar from './components/Sidebar'
 import { StoreContext } from './StoreContext'
 import './styles/HomeCont.css'
 

@@ -1,21 +1,36 @@
 import React, {useContext, useEffect, useState} from 'react'
 import { BrowserRouter as Router,Switch,Route,Link, useHistory} from "react-router-dom"
-import Calendars from './Calendars'
-import Charts from "./Chart"
-import StockCard from './StockCard'
-import { StoreContext } from './StoreContext'
-import './styles/Home.css'
+import Calendars from '../utils/Calendars'
+import Charts from "../utils/Chart"
+import StockCard from '../components/StockCard'
+import { StoreContext } from '../StoreContext'
+import firebase from 'firebase'
+import '../styles/Home.css'
+import thousSep from '../utils/ThousSep'
 
 function Home() {
 
-  const {collection} = useContext(StoreContext)
+  const {collection, myuser} = useContext(StoreContext)
   const [daytime, setDayTime] = useState('')
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
   const thedate = new Date().toLocaleDateString('en', options)
-  const history = useHistory()
+  const user = firebase.auth().currentUser
 
-  const stocksrow = collection && collection.map(el => {
-    return <StockCard el={el[0].quotes[0]}/>
+  const stocksrow = collection && collection
+    .filter(x => myuser.stockslist.includes(x[0].quotes[0].symbol)) 
+    .map(el => {
+      return <StockCard el={el[0].quotes[0]}/> 
+  })
+  const stockstablerow = myuser.customstocks && myuser.customstocks.map(el => {
+      return <tr>
+        <td>{el.name}</td>
+        <td>{el.symbol}</td>
+        <td>{thousSep(el.score)}</td>
+        <td>{thousSep(el.high)}</td>
+        <td>{thousSep(el.low)}</td>
+        <td>{el.change}</td>
+        <td><i className="fal fa-edit"></i></td> 
+      </tr>
   })
 
   useEffect(() => {
@@ -32,7 +47,7 @@ function Home() {
     <div className="home apppage">
       <div className="apptitles">
         <div>
-          <h4>{daytime} Bjorn</h4>
+          <h4>{daytime} {user.displayName}</h4>
           <h5>{thedate}</h5>
         </div>
         <button><i class="fal fa-chart-line"></i><span>Add Stock</span></button>
@@ -43,7 +58,24 @@ function Home() {
       <div className="homegrid">
         <div className="homemain">
           <div className="dashgraph dashbox">
-            <Charts type="bar-chart" /> 
+            <Charts type="line-chart" /> 
+          </div>
+          <div className="dashtable dashbox">
+            <h4>Custom Stocks</h4>
+            <table>
+              <thead>
+                <th>Stock Name</th>
+                <th>Symbol</th>
+                <th>Score</th>
+                <th>High</th>
+                <th>Low</th>
+                <th>Change %</th>
+                <th>Actions</th>
+              </thead>
+              <tbody>
+                {stockstablerow}
+              </tbody>
+            </table>
           </div>
         </div>
         <div className="homeside"> 
@@ -51,21 +83,21 @@ function Home() {
           <div className="statusbox dashbox">
             <div className="iconcont">
               <i className="fal fa-rocket-launch"></i>
-              <h4>Stocks Watched<span>0</span></h4>
+              <h4>Stocks Watched<span>{myuser.stockslist&&myuser.stockslist.length}</span></h4>
             </div>
             <div className="view"><Link to=""><i className="far fa-angle-right"></i></Link></div>
           </div>
           <div className="statusbox dashbox"> 
             <div className="iconcont">
               <i className="fal fa-tasks"></i>
-              <h4>Stocks Rising<span>0</span></h4>
+              <h4>Stocks Rising<span>13</span></h4>
             </div>
             <div className="view"><Link to=""><i className="far fa-angle-right"></i></Link></div>
           </div>
           <div className="statusbox dashbox">
             <div className="iconcont">
               <i className="fal fa-user-friends"></i>
-              <h4>Stocks Falling<span>0</span></h4>
+              <h4>Stocks Falling<span>8</span></h4>
             </div>
             <div className="view"><Link to=""><i className="far fa-angle-right"></i></Link></div>
           </div> 

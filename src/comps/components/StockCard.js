@@ -1,5 +1,6 @@
 import React from 'react'
-import './styles/StockCard.css'
+import '../styles/StockCard.css'
+import thousSep from '../utils/ThousSep'
 
 export default function StockCard(props) {
 
@@ -9,11 +10,11 @@ export default function StockCard(props) {
     <div className="stockcard">
       <div className="left">
         <h4>{longname}</h4>
-        <small><i className="fal fa-chart-line"></i>{score}</small>
+        <small><i className="fal fa-chart-line"></i>{thousSep(score)}</small>
       </div>
       <div className="right">
+        <h6><i className="far fa-arrow-up"></i></h6>
         <h5>{symbol}</h5>
-        <h6>{score}</h6>
       </div>
     </div>
   )

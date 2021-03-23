@@ -1,13 +1,15 @@
 import React, { useState, useContext } from 'react'
 import {BrowserRouter as Router, Switch, Route, Link, NavLink} from 'react-router-dom'
-import Logo from './Logo'
-import { StoreContext } from './StoreContext'
-import './styles/Sidebar.css'
+import Logo from '../utils/Logo'
+import { StoreContext } from '../StoreContext'
+import '../styles/Sidebar.css'
+import firebase from 'firebase'
 
 export default function Sidebar(props) {
 
-  const {foldside, showSidebar, setShowSidebar} = useContext(StoreContext)
+  const {myuser, foldside, showSidebar, setShowSidebar} = useContext(StoreContext)
   const [expandacc, setExpandAcc] = useState(false)
+  const user = firebase.auth().currentUser
 
   return ( 
     <div className={showSidebar?"sidebar mobsidebar":foldside?"sidebar sidebarfolded":"sidebar"}>
@@ -16,8 +18,8 @@ export default function Sidebar(props) {
       <div className="sidebartop">
         <Logo width={35} color="#fff"/>
         <div className="profcont">
-          <img src="https://i.imgur.com/Z0LGT0W.jpg" alt="accountimg"/>
-          <h5>Bjorn Ironside</h5>
+          <img src={myuser.profimg} alt="accountimg"/>
+          <h5>{user.displayName}</h5>
         </div>  
         <div className="myaccountcont">
           <h6 onClick={() => setExpandAcc(!expandacc)} style={{background: expandacc?"rgba(255,255,255,0.1)":""}}>

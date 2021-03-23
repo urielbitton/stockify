@@ -1,8 +1,9 @@
 import React, { useContext, useEffect } from 'react'
 import {BrowserRouter as Router, Switch, Route, Link, useHistory} from 'react-router-dom'
-import './styles/Navbar.css'
-import {AppInput, AppSwitch} from './AppInputs'
-import { StoreContext } from './StoreContext'
+import '../styles/Navbar.css'
+import {AppInput, AppSwitch} from '../utils/AppInputs'
+import { StoreContext } from '../StoreContext'
+import firebase from 'firebase'
 
 export default function Navbar(props) {
  
@@ -35,6 +36,7 @@ export default function Navbar(props) {
       <div className="toolbar">
         <AppSwitch iconclass="far fa-moon-stars" checked={darkmode} onChange={(e) => setDarkmode(e.target.checked)}/>
         <i className="far fa-bell"></i>
+        <i className="far fa-sign-out" onClick={() => firebase.auth().signOut()}></i>
         <i className="far fa-user" onClick={() => history.replace('/settings/')}></i>
       </div>
     </nav>

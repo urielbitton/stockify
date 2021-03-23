@@ -1,12 +1,12 @@
 import React from 'react'
 import {BrowserRouter as Router, Switch, Route, Link, NavLink} from 'react-router-dom'
-import Home from './Home'
-import Navbar from './Navbar'
+import Home from './screens/Home'
+import Navbar from './components/Navbar'
 import './styles/MainContent.css'
-import Settings from './Settings'
-import Portfolio from './Portfolio'
-import Discover from './Discover'
-import Earnings from './Earnings'
+import Settings from './screens/Settings'
+import Portfolio from './screens/Portfolio'
+import Discover from './screens/Discover'
+import Earnings from './screens/Earnings'
 
 
 export default function MainContent() {

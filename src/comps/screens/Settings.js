@@ -1,23 +1,28 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {BrowserRouter as Router, Switch, Route, Link, NavLink} from 'react-router-dom'
 import Profile from './Profile' 
 import SettingsOthers from './SettingsOthers'
-import './styles/MonProfil.css'
+import '../styles/Profile.css'
+import firebase from 'firebase'
+import { StoreContext } from '../StoreContext'
 
 export default function Account() {
+
+  const {myuser} = useContext(StoreContext)
+  const user = firebase.auth().currentUser
 
   return (
     <div className="monprofilpage">
       <div className="profilesidebar">
         <div>
-        <div className="profimgcont" style={{backgroundImage: `url(https://i.imgur.com/bcCbeiE.jpg)`}}>
+        <div className="profimgcont" style={{backgroundImage: `url(${myuser.profimg})`}}>
           <div className="cameracont">
             <i className="fal fa-camera"></i>
           </div>
         </div>
         <div className="profiltitles">
-          <h4>Bjorn Ironside</h4>
-          <h6>App Developer</h6>
+          <h4>{user.displayName}</h4>
+          <h6>{myuser.jobtitle}</h6>
         </div>
         <div className="menu">
           <NavLink exact to="/settings/" activeClassName="activeproflink"><i className="far fa-user"></i>Account</NavLink>

@@ -100,7 +100,7 @@
   box-shadow: var(--shadow);
   border-radius: 10px;
   padding: 20px;
-  background: #fff;
+  background: var(--white1);
   width: 100%;
 }
 .dashbox .view a i {
@@ -109,7 +109,7 @@
 }
 .calendar {
   grid-column: span 1;
-  background: #fff;
+  background: var(--white1);
   border-radius: 10px;
   width: 100%;
   height: 305px;
@@ -121,6 +121,9 @@
 }
 #calendar .fc-toolbar-title {
   font-size: 16px;
+}
+.darkcont #calendar .fc-toolbar-title {
+  color: #aaa;
 }
 #calendar .fc-today-button {
   background: none;
@@ -378,3 +381,40 @@
 .darkcont .homepage h3 {
   color: #bbb;
 } 
+
+.dashtable {
+  grid-column: 1/-1;
+}
+.dashtable h4 {
+  color: #777;
+  margin-bottom: 20px;
+}
+.dashtable table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+.dashtable table th {
+  font-size: 13px;
+  padding: 10px;
+  color: #444;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+}
+.dashtable table tr {
+  border-bottom: 1px solid #eee;
+}
+.dashtable table td {
+  font-weight: 500;
+  color: #777;
+  padding: 15px;
+  font-size: 14px;
+}
+.dashtable table td i {
+  transition: all 0.2s;
+  cursor: pointer;
+  padding: 0 5px;
+}
+.dashtable table td i:hover {
+  color: var(--color);
+}

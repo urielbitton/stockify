@@ -1,0 +1,232 @@
+.monprofilpage {
+  display: grid;
+  grid-template-columns: 350px auto;
+  grid-gap: 30px;
+  width: 100%;
+} 
+.profilesidebar, .profilecontent {
+  width: 100%;
+  background: var(--white1);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 30px; 
+}
+.profilecontent table {
+  overflow-x: scroll;
+}
+.profilesidebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  grid-gap: 20px;
+}
+.profimgcont {
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  box-shadow: var(--shadow);
+  background-size: cover;
+  background-position: center;
+  margin: auto;
+  margin-bottom: 20px;
+}
+.profimgcont .cameracont {
+  position: absolute;
+  right: 0;
+  bottom: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background: var(--color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.2s;
+}
+.profimgcont:hover .cameracont {
+  opacity: 1;
+}
+.profilesidebar .profiltitles {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.darkcont .profilesidebar .profiltitles h4 {
+  color: #bbb;
+}
+.profilesidebar div h4 {
+  color: #333;
+  font-size: 20px;
+}
+.profilesidebar div h6 {
+  color: #aaa;
+  font-weight: 500;
+}
+.profilesidebar .menu {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap; 
+  grid-gap: 20px;
+  margin-top: 50px;
+}
+.profilesidebar .menu a {
+  width: 130px;
+  height: 130px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  grid-gap: 10px;
+  font-size: 15px;
+  color: #666;
+  transition: all 0.3s;
+}
+.profilesidebar .menu a:hover, .profilesidebar .menu .activeproflink {
+  background: var(--color);
+  box-shadow: 0 1px 20px var(--colorshadow);
+  color: #fff;
+}
+.profilesidebar .menu a i {
+  font-size: 22px;
+  margin: 0;
+}
+.profilesidebar .credits {
+  margin-top: 50px;
+  justify-self: flex-end; 
+  font-size: 11px;
+  color: #aaa;
+}
+
+.profilcontent {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.profilgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  grid-gap: 40px;
+  margin-top: 50px;
+  width: 100%;
+}
+.profilgrid .appselect {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profilgrid select {
+  width: 70%;
+  padding: 12px 10px;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 56, 146, 0.08); 
+  font-size: 12px;
+  color: #777;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.profilgrid label h5 {
+  margin-bottom: 5px;
+  color: #777;
+}
+.profilgrid button {
+  grid-column: 1/-1;
+  width: 120px;
+}
+.profilcontent > h4 {
+  text-align: left;
+  align-self: flex-start;
+  font-size: 17px;
+  color: #444;
+}
+.darkcont .profilcontent > h4 {
+  color: #bbb;
+}
+.profilgrid > h4 {
+  color: #aaa;
+  font-weight: 500;
+  grid-column: 1/-1;
+  font-size: 14px;
+}
+.horairediv {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-gap: 60px;
+}
+.horairediv label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.horairediv label > div {
+  width: 300px; 
+}
+.stocksboxrow {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  grid-gap: 20px;
+  margin-bottom: 30px;
+  grid-column: 1/-1;
+}
+.stocksbox {
+  width: 150px;
+  height: 150px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  background: #f1f1f1;
+  border: 1px solid #ddd;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.stocksbox:hover {
+  background: #e1e1e1; 
+}
+.stocksbox:active {
+  transform: scale(0.95)
+}
+.stocksbox h4 {
+  font-size: 15px;
+}
+.stocksbox h5 {
+  font-size: 12px;
+  color: #777;
+  font-weight: 500;
+  margin-top: 10px;
+}
+.stocksboxactive, .stocksboxactive:hover {
+  background: var(--color);
+}
+.stocksboxactive h4 {
+  color: #fff;
+}
+.stocksboxactive h5 {
+  color: #ddd;
+}
+.stocksboxactive i {
+  color: #fff;
+  font-weight: 600
+}
+
+@media (max-width: 1900px) {
+  .monprofilpage {
+    grid-template-columns: 100%;
+  }
+}

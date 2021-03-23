@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles/AppInputs.css'
+import '../styles/AppInputs.css'
 
 export function AppInput(props) {
   const {title,formatclass='',iconclass,padright,padleft,inpRef,onFocus,placeholder,type,value,onChange,name,checked,disabled,onKeyUp,step,min,max} = props
