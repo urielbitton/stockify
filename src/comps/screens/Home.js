@@ -17,7 +17,7 @@ function Home() {
   const user = firebase.auth().currentUser
 
   const stocksrow = collection && collection
-    .filter(x => myuser.stockslist.includes(x[0].quotes[0].symbol)) 
+    .filter(x => myuser.stockslist&&myuser.stockslist.includes(x[0].quotes[0].symbol)) 
     .map(el => {
       return <StockCard el={el[0].quotes[0]}/> 
   })
