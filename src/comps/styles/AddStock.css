@@ -1,0 +1,66 @@
+.addstockcover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.8);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+  visibility: hidden;
+  opacity: 0;
+}
+.addstockcont {
+  width: 500px;
+  height: 700px;
+  border-radius: 10px;
+  background: var(--white1);
+  box-shadow: var(--shadow);
+  padding: 30px;
+  top: 40px;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.addstockcont > div {
+  width: 100%;
+}
+.addstockcont .fa-times {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  padding: 5px;
+  font-size: 27px;
+  color: #aaa;
+  cursor: pointer;
+}
+.addstockcont > h4 {
+  font-size: 20px;
+  color: var(--color)
+}
+.addstockcont > h4 i {
+  margin-right: 20px;
+}
+.addstockcont label {
+  margin-bottom: 15px;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+.addstockcont label h5 {
+  margin-bottom: 5px;
+  color: var(--graytxt);
+  font-weight: 600;
+}
+.addstockcont input {
+  height: 40px;
+}
+.addstockcont button {
+  margin-top: 20px;
+}
+

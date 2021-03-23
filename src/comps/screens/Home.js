@@ -10,7 +10,7 @@ import thousSep from '../utils/ThousSep'
 
 function Home() {
 
-  const {collection, myuser} = useContext(StoreContext)
+  const {collection, myuser, setShowAdder} = useContext(StoreContext)
   const [daytime, setDayTime] = useState('')
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
   const thedate = new Date().toLocaleDateString('en', options)
@@ -50,7 +50,10 @@ function Home() {
           <h4>{daytime} {user.displayName}</h4>
           <h5>{thedate}</h5>
         </div>
-        <button><i class="fal fa-chart-line"></i><span>Add Stock</span></button>
+        <button onClick={() => setShowAdder(prev => !prev)}>
+          <i class="fal fa-chart-line"></i>
+          <span>Add Stock</span>
+        </button>
       </div>
       <div className="stocksrow">
         {stocksrow}

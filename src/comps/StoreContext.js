@@ -18,13 +18,14 @@ const StoreContextProvider = (props) => {
   const stocks = ['google','facebook','apple','tesla','amazon','microsoft']
   const [stocksBox, setStocksBox] = useState([])
   const [stocksarr, setStocksArr] = useState([])
+  const [showAdder, setShowAdder] = useState(false)
  
   useEffect(() => {
     user&&db.collection('users').doc(user.uid).onSnapshot(snap => {
       setMyUser(snap.data().userinfo)  
     }) 
-  },[user]) 
-  useEffect(() => {
+  },[user])  
+  /*useEffect(() => {
     stocks && stocks.forEach(el => {
       let options = {
         method: 'GET',
@@ -40,12 +41,13 @@ const StoreContextProvider = (props) => {
         setCollection(prev => [...prev,[res.data]])
       })
     })
-  },[])
+  },[])*/
  
   return (
     <StoreContext.Provider value={{darkmode, setDarkmode, foldside, setFoldSide, 
       themecolor, setThemeColor, showSidebar, setShowSidebar, collection, setCollection,
-      myuser, setMyUser, stocksList, setStocksList, stocksBox, stocksarr, setStocksArr
+      myuser, setMyUser, stocksList, setStocksList, stocksBox, stocksarr, setStocksArr,
+      showAdder, setShowAdder
     }}>
       {props.children}
     </StoreContext.Provider>

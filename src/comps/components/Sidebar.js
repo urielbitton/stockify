@@ -7,7 +7,7 @@ import firebase from 'firebase'
 
 export default function Sidebar(props) {
 
-  const {myuser, foldside, showSidebar, setShowSidebar} = useContext(StoreContext)
+  const {myuser, foldside, showSidebar, setShowSidebar, setShowAdder} = useContext(StoreContext)
   const [expandacc, setExpandAcc] = useState(false)
   const user = firebase.auth().currentUser
 
@@ -39,7 +39,7 @@ export default function Sidebar(props) {
         </div>
       </div>
       <div className="sidebarbottom">
-        <button><i className="fal fa-chart-line"></i><span>Add Stock</span></button>
+        <button onClick={() => setShowAdder(prev => !prev)}><i className="fal fa-chart-line"></i><span>Add Stock</span></button>
       </div>
     </div>
   )

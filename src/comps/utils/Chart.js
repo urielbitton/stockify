@@ -4,7 +4,6 @@ import Chart from 'chart.js';
 function Charts(props) { 
 
   useEffect(() => {
-
     //bar chart    
     new Chart(document.getElementById("line-chart"), {
       type: 'line',
@@ -13,20 +12,20 @@ function Charts(props) {
         datasets: [{ 
             data: [14,16,18,11,21,23,27,23,11,20,14,13],
             label: "Watched",
-            borderColor: "#fafafa", 
-            fill: true,
+            borderColor: "#a7ff83", 
+            fill: false,
             backgroundColor: "#a7ff83"
           }, {  
             data: [5,3,17,18,14,13,14,15,6,19,26,4],
             label: "Rising",
-            borderColor: "#fafafa",
-            fill: true,
+            borderColor: "#17b978",
+            fill: false,
             backgroundColor: "#17b978"  
           }, { 
             data: [23,25,27,28,24,23,4,5,16,19,3,4],
             label: "Falling",
-            borderColor: "#fafafa",
-            fill: true,
+            borderColor: "#086972",
+            fill: false,
             backgroundColor: "#086972"   
           }
         ]   
@@ -46,8 +45,11 @@ function Charts(props) {
           }],
           yAxes: [{
             gridLines: {
-              color: '#f5f5f5'
+              color: '#f5f5f5',
             },
+            ticks: {
+              max:60
+            }
           }]
         }
       }
