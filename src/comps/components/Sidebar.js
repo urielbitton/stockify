@@ -5,11 +5,16 @@ import { StoreContext } from '../StoreContext'
 import '../styles/Sidebar.css'
 import firebase from 'firebase'
 
-export default function Sidebar(props) {
+export default function Sidebar() {
 
-  const {myuser, foldside, showSidebar, setShowSidebar, setShowAdder} = useContext(StoreContext)
+  const {myuser, foldside, showSidebar, setShowSidebar, setShowAdder, setEditMode} = useContext(StoreContext)
   const [expandacc, setExpandAcc] = useState(false)
   const user = firebase.auth().currentUser
+
+  function addFunc() {
+    setShowAdder(prev => !prev)
+    setEditMode(false) 
+  }
 
   return ( 
     <div className={showSidebar?"sidebar mobsidebar":foldside?"sidebar sidebarfolded":"sidebar"}>
@@ -39,7 +44,7 @@ export default function Sidebar(props) {
         </div>
       </div>
       <div className="sidebarbottom">
-        <button onClick={() => setShowAdder(prev => !prev)}><i className="fal fa-chart-line"></i><span>Add Stock</span></button>
+        <button onClick={() => addFunc()}><i className="fal fa-chart-line"></i><span>Add Stock</span></button>
       </div>
     </div>
   )

@@ -14,12 +14,12 @@
   opacity: 0;
 }
 .addstockcont {
-  width: 500px;
+  width: 450px;
   height: 700px;
   border-radius: 10px;
   background: var(--white1);
   box-shadow: var(--shadow);
-  padding: 30px;
+  padding: 30px 40px;
   top: 40px;
   transition: all 0.3s;
   display: flex;

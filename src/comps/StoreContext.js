@@ -19,6 +19,8 @@ const StoreContextProvider = (props) => {
   const [stocksBox, setStocksBox] = useState([])
   const [stocksarr, setStocksArr] = useState([])
   const [showAdder, setShowAdder] = useState(false)
+  const [editData, setEditData] = useState({})
+  const [editMode, setEditMode] = useState(false)
  
   useEffect(() => {
     user&&db.collection('users').doc(user.uid).onSnapshot(snap => {
@@ -47,7 +49,7 @@ const StoreContextProvider = (props) => {
     <StoreContext.Provider value={{darkmode, setDarkmode, foldside, setFoldSide, 
       themecolor, setThemeColor, showSidebar, setShowSidebar, collection, setCollection,
       myuser, setMyUser, stocksList, setStocksList, stocksBox, stocksarr, setStocksArr,
-      showAdder, setShowAdder
+      showAdder, setShowAdder, editData, setEditData, editMode, setEditMode
     }}>
       {props.children}
     </StoreContext.Provider>

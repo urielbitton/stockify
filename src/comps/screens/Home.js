@@ -7,10 +7,11 @@ import { StoreContext } from '../StoreContext'
 import firebase from 'firebase'
 import '../styles/Home.css'
 import thousSep from '../utils/ThousSep'
+import {db} from '../utils/Fire'
 
 function Home() {
-
-  const {collection, myuser, setShowAdder} = useContext(StoreContext)
+ 
+  const {collection, myuser, setShowAdder, setEditMode, setEditData} = useContext(StoreContext)
   const [daytime, setDayTime] = useState('')
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
   const thedate = new Date().toLocaleDateString('en', options)
@@ -29,9 +30,43 @@ function Home() {
         <td>{thousSep(el.high)}</td>
         <td>{thousSep(el.low)}</td>
         <td>{el.change}</td>
-        <td><i className="fal fa-edit"></i></td> 
+        <td>
+          <i className="fal fa-edit" onClick={() => editFunc(el)}></i>
+          <i className="fal fa-trash-alt" onClick={() => deleteStock(el)}></i>
+        </td> 
       </tr>
   })
+
+  function editFunc(el) {
+    setShowAdder(prev => !prev)
+    setEditData({
+      name: el.name,
+      symbol: el.symbol,
+      score: el.score,
+      high: el.high,
+      low: el.low,
+      change: el.change
+    })
+    setEditMode(true)
+  }
+  function deleteStock(el) {
+    let confirm = window.confirm(`Are you sure you want to delete the stock ${el.name}?`)
+    if(confirm) {
+      myuser.customstocks.forEach(el2 => {
+        if(el2.symbol===el.symbol) {
+          let itemindex = myuser.customstocks.indexOf(el)
+          myuser.customstocks.splice(itemindex,1)
+        }
+      })
+      db.collection('users').doc(user.uid).update({
+        userinfo: myuser 
+      })
+    }
+  }
+  function addFunc() {
+    setShowAdder(prev => !prev)
+    setEditMode(false)
+  } 
 
   useEffect(() => {
     let time = new Date().getHours()
@@ -50,7 +85,7 @@ function Home() {
           <h4>{daytime} {user.displayName}</h4>
           <h5>{thedate}</h5>
         </div>
-        <button onClick={() => setShowAdder(prev => !prev)}>
+        <button onClick={() => addFunc()}>
           <i class="fal fa-chart-line"></i>
           <span>Add Stock</span>
         </button>
