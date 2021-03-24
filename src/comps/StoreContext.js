@@ -27,7 +27,7 @@ const StoreContextProvider = (props) => {
       setMyUser(snap.data().userinfo)  
     }) 
   },[user])  
-  /*useEffect(() => {
+  useEffect(() => {
     stocks && stocks.forEach(el => {
       let options = {
         method: 'GET',
@@ -43,7 +43,7 @@ const StoreContextProvider = (props) => {
         setCollection(prev => [...prev,[res.data]])
       })
     })
-  },[])*/
+  },[])
  
   return (
     <StoreContext.Provider value={{darkmode, setDarkmode, foldside, setFoldSide, 
