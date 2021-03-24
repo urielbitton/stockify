@@ -156,6 +156,14 @@
   grid-column: 1/-1;
   font-size: 14px;
 }
+.passwordcont i {
+  position: absolute;
+  top: 35px;
+  right: 15px;
+  padding: 5px;
+  color: #777;
+  cursor: pointer; 
+}
 .horairediv {
   grid-column: 1/-1;
   display: flex;

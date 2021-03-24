@@ -67,6 +67,7 @@ export default function App() {
           uid: user.uid,
           fullname: name?name:'Guest User',
           email: user.email,
+          password,
           phone: "",
           city: "",
           provstate: "",

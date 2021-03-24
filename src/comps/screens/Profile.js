@@ -15,6 +15,7 @@ export default function ParamProfil() {
   const [company, setCompany] = useState(myuser.company)
   const [jobtitle, setJobTitle] = useState(myuser.jobtitle)
   const [password, setPassword] = useState(myuser.password)
+  const [showPass, setShowPass] = useState(false)
   const user = firebase.auth().currentUser
    
   const stocksboxes = stocksBox && stocksBox.map(el => {
@@ -65,7 +66,10 @@ export default function ParamProfil() {
         <AppInput title="Company" onChange={(e) => setCompany(e.target.value)} value={company}/>
         <AppInput title="Job Title" onChange={(e) => setJobTitle(e.target.value)} value={jobtitle}/>
         <AppInput title="Date Joined" type="date" value="2021-03-02" disabled/>
-        <AppInput title="Password" type="password" onChange={(e) => setPassword(e.target.value)} value={password}/>
+        <div className="passwordcont">
+          <AppInput title="Password" type={showPass?"text":"password"} disabled onChange={(e) => setPassword(e.target.value)} value={password}/>
+          <i className={showPass?"far fa-eye-slash":"far fa-eye"} onClick={() => setShowPass(prev => !prev)}></i>
+        </div>
         <h4>App Stocks</h4>
         <div className="stocksboxrow">
           {stocksboxes}
